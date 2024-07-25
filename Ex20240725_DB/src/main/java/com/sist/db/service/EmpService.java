@@ -41,4 +41,16 @@ public class EmpService {
         return e_ar;
     }
 
+    public EmpVO[] search(Map<String,String> s_map){
+        EmpVO[] e_ar = null;
+
+        List<EmpVO> e_list = e_mapper.search(s_map);
+        if(e_list != null && e_list.size()>0){
+            e_ar = new EmpVO[e_list.size()];
+            e_list.toArray(e_ar);
+        }
+
+        return e_ar;
+    }
+
 }

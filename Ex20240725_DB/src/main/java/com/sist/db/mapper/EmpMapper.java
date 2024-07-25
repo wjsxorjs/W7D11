@@ -13,5 +13,5 @@ public interface EmpMapper {
     
     List<EmpVO> subAll(Map<String,String> e_map);
 
-    
+    List<EmpVO> search(Map<String,String> s_map);
 }

@@ -47,7 +47,7 @@ public class EmpController {
         return mv;
     }
 
-    @RequestMapping(value="/search", method=RequestMethod.GET)
+    @RequestMapping(value="/search", method=RequestMethod.POST)
     public ModelAndView search(String searchType, String searchValue) {
         Map<String, String> s_map = new HashMap<>();
         s_map.put("searchType", searchType);
@@ -61,7 +61,7 @@ public class EmpController {
         return mv;
     }
 
-    @RequestMapping(value="/search_ajax", method=RequestMethod.GET)
+    @RequestMapping(value="/search_ajax", method=RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> search_ajax(String searchType, String searchValue) {
         Map<String, String> s_map = new HashMap<>();
@@ -74,7 +74,7 @@ public class EmpController {
         e_map.put("e_ar", e_ar);
         e_map.put("len", e_ar.length);
 
-        return mv;
+        return e_map;
     }
 
 
